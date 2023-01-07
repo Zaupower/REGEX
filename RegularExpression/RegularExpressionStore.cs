@@ -10,7 +10,10 @@ namespace RegularExpression
         // address cannot contain spaces inside, but can contain spaces at the beginning and end of the string
         public static bool Method1(string input)
         {
-            throw new NotImplementedException();
+            string pattern = @"^\s?[a-zA-Z._-]+@\w+\.com\s?$";
+            Regex regex = new Regex(pattern);
+            bool isMatch = regex.IsMatch(input);
+            return isMatch;
         }
 
         // the method should return a collection of field names from the json input

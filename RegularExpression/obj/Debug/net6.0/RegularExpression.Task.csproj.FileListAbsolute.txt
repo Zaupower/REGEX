@@ -1,0 +1,12 @@
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\bin\Debug\net6.0\RegularExpression.Task.deps.json
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\bin\Debug\net6.0\RegularExpression.Task.dll
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\bin\Debug\net6.0\RegularExpression.Task.pdb
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.csproj.AssemblyReference.cache
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.AssemblyInfoInputs.cache
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.AssemblyInfo.cs
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.csproj.CoreCompileInputs.cache
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.dll
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\refint\RegularExpression.Task.dll
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\RegularExpression.Task.pdb
+C:\Users\marce\OneDrive\Documents\QABootcamp\Lecture17\REGEX\RegularExpression\RegularExpression\obj\Debug\net6.0\ref\RegularExpression.Task.dll
