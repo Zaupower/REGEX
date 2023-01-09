@@ -4,6 +4,8 @@ namespace RegularExpression
 {
     public static class RegularExpressionStore
     {
+        public static string  _pattern = @"(?<="").+(?="":)";
+        private static readonly Regex _test2Regex = new Regex(@"(?<="").+(?="":)");
         // should return a bool indicating whether the input string is
         // a valid team international email address: firstName.lastName@domain (serhii.mykhailov@teaminternational.com etc.)
         // address cannot contain numbers
@@ -19,7 +21,10 @@ namespace RegularExpression
         // the method should return a collection of field names from the json input
         public static IEnumerable<string> Method2(string inputJson)
         {
-            throw new NotImplementedException();
+            //Full regex (?<="").+(?="" ?: ?("".+""|(\d+(.\d+)?)|true|null))
+            //need to change .+(greedy basterd)
+            var matchList = _test2Regex.Match(inputJson).Value;
+            return null;
         }
 
         // the method should return a collection of field values from the json input
