@@ -4,8 +4,6 @@ namespace RegularExpression
 {
     public static class RegularExpressionStore
     {
-        public static string  _pattern = @"(?<="").+(?="":)";
-        private static readonly Regex _test2Regex = new Regex(@"(?<="")+[a-zA-Z._0-9-*]+(?="":)");
 
         // should return a bool indicating whether the input string is
         // a valid team international email address: firstName.lastName@domain (serhii.mykhailov@teaminternational.com etc.)
@@ -13,8 +11,7 @@ namespace RegularExpression
         // address cannot contain spaces inside, but can contain spaces at the beginning and end of the string
         public static bool Method1(string input)
         {
-            string pattern = @"^\s?[a-zA-Z._-]+@\w+\.com\s?$";
-            Regex regex = new Regex(pattern);
+            Regex regex = new Regex(@"^\s?[a-zA-Z._-]+@\w+\.com\s?$");
             bool isMatch = regex.IsMatch(input);
             return isMatch;
         }
@@ -24,6 +21,7 @@ namespace RegularExpression
         {
             //Full regex (?<="").+(?="" ?: ?("".+""|(\d+(.\d+)?)|true|null))
             //need to change .+(greedy basterd)
+            Regex _test2Regex = new Regex(@"(?<="")+[a-zA-Z._0-9-*]+(?="":)");
             var matchList = _test2Regex.Matches(inputJson).ToList();
             IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
 
@@ -33,20 +31,38 @@ namespace RegularExpression
         // the method should return a collection of field values from the json input
         public static IEnumerable<string> Method3(string inputJson)
         {
-            throw new NotImplementedException();
+            Regex _test2Regex = new Regex(@"(?<=.+"":""|.+"":)+[a-zA-Z._0-9-*]+(?=}|""|,)");
+            var matchList = _test2Regex.Matches(inputJson).ToList();
+            IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
+
+            return result;
         }
 
         // the method should return a collection of field names from the xml input
         public static IEnumerable<string> Method4(string inputXml)
         {
-            throw new NotImplementedException();
+            //Fields from Root: TestClass
+            string rootElement = "TestClass";
+            Regex _test2Regex = new Regex(@"(?<=<"+rootElement+".*<)+[a-zA-Z._0-9-*]+(?=|/>)");
+            var matchList = _test2Regex.Matches(inputXml).ToList();
+            IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
+
+            return result;
         }
 
         // the method should return a collection of field values from the input xml
         // omit null values
         public static IEnumerable<string> Method5(string inputXml)
         {
-            throw new NotImplementedException();
+            //(?<=<)[a-zA-Z._0-9-*]+(?=.+\/>)(?=!\n)
+            //V2   
+            //(?<=<)[a-zA-Z._0-9-*]+(?=.+\/>|>)
+            //(?<=<)+[a-zA-Z._0-9-*]+(?=>|(.*)\/>)
+            Regex _test2Regex = new Regex(@"(?<=<TestClass .*>)+[a-zA-Z._0-9-*]+(?=|/>)");
+            var matchList = _test2Regex.Matches(inputXml).ToList();
+            IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
+
+            return result;
         }
 
         // read from the input string and return Ukrainian phone numbers written in the formats of 0671234567 | +380671234567 | (067)1234567 | (067) - 123 - 45 - 67
