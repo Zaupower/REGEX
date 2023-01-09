@@ -67,12 +67,18 @@ namespace RegularExpression
 
         // read from the input string and return Ukrainian phone numbers written in the formats of 0671234567 | +380671234567 | (067)1234567 | (067) - 123 - 45 - 67
         // +38 - optional Ukrainian country code
-        // (067)-123-45-67 | 067-123-45-67 | 38 067 123 45 67 | 067.123.45.67 etc.
+         
         // make a decision for operators 067, 068, 095 and any subscriber part.
         // numbers can be separated by symbols , | ; /
         public static IEnumerable<string> Method6(string input)
         {
-            throw new NotImplementedException();
+            //To get just the numbers: (?<=.*)[a-zA-Z._0-9( - )\-]+(?=.*) 
+            Regex _test2Regex = new Regex(@"\s*(\+?(\d{1,3}))?[-. ()]*(\d{3})?[-. ()]*(\d{2})");
+            var matchList = _test2Regex.Matches(input).ToList();
+            IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
+            //IEnumerable<string> resultsReplace =result.Select(i=> Regex.Replace(i, @"\s+|\(|\)|\-|\.", "")).ToList();
+
+            return result;
         }
     }
 }
