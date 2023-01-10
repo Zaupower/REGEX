@@ -72,8 +72,8 @@ namespace RegularExpression
         // numbers can be separated by symbols , | ; /
         public static IEnumerable<string> Method6(string input)
         {
-            //To get just the numbers: (?<=.*)[a-zA-Z._0-9( - )\-]+(?=.*) 
-            Regex _test2Regex = new Regex(@"\s*(\+?(\d{1,3}))?[-. ()]*(\d{3})?[-. ()]*(\d{2})");
+            //Position 6 fails, should be added +38, or shouldn't be a match?
+            Regex _test2Regex = new Regex(@"(\+38\s?(095|067|068)\s?\d{3}(\s?\d{2}){2})|(\(?095\)?\d{3}\d{2}\d{2}|\(?067\)?([\s.-]{0,3})?\d{3}([\s.-]{0,3})?\d{2}([\s.-]{0,3})?\d{2}(?!\d)|\(?068\)?\s\d{4}\s\d{3}(?<=[|,\s;-])*)");
             var matchList = _test2Regex.Matches(input).ToList();
             IEnumerable<string> result = matchList.Cast<Match>().Select(match => match.Value).ToList();
             //IEnumerable<string> resultsReplace =result.Select(i=> Regex.Replace(i, @"\s+|\(|\)|\-|\.", "")).ToList();
